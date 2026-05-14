@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./BeforeAfter.module.css";
 
 export default function BeforeAfter() {
-  const [position, setPosition] = useState(50);
+  const [position, setPosition] = useState(60);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
@@ -83,7 +83,7 @@ export default function BeforeAfter() {
         <div
           className={styles.imageAfter}
           style={{
-            clipPath: `inset(0 ${100 - position}% 0 0)`,
+            clipPath: `inset(0 0 0 ${position}%)`,
             transition: prefersReduced ? "none" : undefined,
           }}
         >

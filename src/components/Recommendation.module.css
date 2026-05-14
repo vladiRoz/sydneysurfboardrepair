@@ -1,77 +1,104 @@
 .section {
   padding: var(--sp-section) clamp(16px, 5vw, 64px);
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
+  border-top: 1px solid var(--border);
 }
 
-.inner {
-  max-width: 760px;
+.heading {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin: 0 0 clamp(48px, 6vw, 72px);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: clamp(24px, 3vw, 40px);
+  max-width: 560px;
+  width: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.googleBadge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.googleText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
 }
 
 .stars {
   display: flex;
-  gap: 4px;
-  color: var(--ink);
-  margin-bottom: var(--sp-md);
+  gap: 2px;
 }
 
 .quote {
-  margin: 0 0 var(--sp-md);
+  margin: 0 0 20px;
   padding: 0;
 }
 
 .quote p {
-  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
-  font-weight: 900;
-  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 0 0 var(--sp-md);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  line-height: 1.65;
+  color: var(--cream);
+  margin: 0;
+  font-style: italic;
 }
 
 .author {
   display: flex;
-  align-items: baseline;
-  gap: var(--sp-sm);
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #4285F4;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .name {
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cream);
 }
 
-.source {
-  font-family: var(--font-body), system-ui, sans-serif;
+.meta {
   font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink);
-  opacity: 0.6;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
-  border: 2px solid var(--ink);
-  padding: 10px 20px;
-}
-
-.badgeScore {
-  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
-  font-weight: 900;
-  font-size: 2rem;
-  line-height: 1;
-  color: var(--ink);
-}
-
-.badgeLabel {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink);
-  opacity: 0.7;
+  color: var(--muted);
 }

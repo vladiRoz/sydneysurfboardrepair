@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Big_Shoulders_Display, Familjen_Grotesk } from "next/font/google";
+import ScrollReveal from "@/components/ScrollReveal";
 import "./globals.css";
 
 const bigShoulders = Big_Shoulders_Display({
@@ -37,7 +38,10 @@ export default function RootLayout({
       lang="en"
       className={`${bigShoulders.variable} ${familjenGrotesk.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <ScrollReveal />
+        {children}
+      </body>
     </html>
   );
 }

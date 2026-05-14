@@ -4,10 +4,10 @@ export default function DropOff() {
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.content}>
-        <h2 className={styles.heading}>Drop It Off</h2>
+        <h2 className={styles.heading} data-reveal>Drop It Off</h2>
 
         <dl className={styles.details}>
-          <div className={styles.detailRow}>
+          <div className={styles.detailRow} data-reveal data-reveal-delay="80">
             <dt className={styles.dtLabel}>Address</dt>
             <dd className={styles.ddValue}>
               <a
@@ -23,7 +23,7 @@ export default function DropOff() {
             </dd>
           </div>
 
-          <div className={styles.detailRow}>
+          <div className={styles.detailRow} data-reveal data-reveal-delay="160">
             <dt className={styles.dtLabel}>Hours</dt>
             <dd className={styles.ddValue}>
               <span>Mon – Sat</span>
@@ -32,7 +32,7 @@ export default function DropOff() {
             </dd>
           </div>
 
-          <div className={styles.detailRow}>
+          <div className={styles.detailRow} data-reveal data-reveal-delay="240">
             <dt className={styles.dtLabel}>Phone</dt>
             <dd className={styles.ddValue}>
               <a href="tel:0410207555" className={styles.phone}>
@@ -41,7 +41,7 @@ export default function DropOff() {
             </dd>
           </div>
 
-          <div className={styles.detailRow}>
+          <div className={styles.detailRow} data-reveal data-reveal-delay="320">
             <dt className={styles.dtLabel}>Email</dt>
             <dd className={styles.ddValue}>
               <a href="mailto:repairs@gmail.com" className={styles.email}>
@@ -51,12 +51,18 @@ export default function DropOff() {
           </div>
         </dl>
 
-        <a href="tel:0410207555" className={styles.cta}>
-          Call to confirm drop-off &rarr;
+        <a
+          href="tel:0410207555"
+          className={styles.cta}
+          data-reveal
+          data-reveal-delay="400"
+        >
+          Call to confirm drop-off
+          <span className={styles.arrow} aria-hidden="true">→</span>
         </a>
       </div>
 
-      <div className={styles.mapWrap}>
+      <div className={styles.mapWrap} data-reveal="right">
         <iframe
           src="https://www.openstreetmap.org/export/embed.html?bbox=151.0800%2C-34.0490%2C151.0920%2C-34.0390&layer=mapnik&marker=-34.0440%2C151.0860"
           title="Sydney Surfboard Repair location map"

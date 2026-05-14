@@ -7,7 +7,7 @@ const members = [
     src: "/images/stuart.jpg",
     name: "Stuart",
     role: "Founder & Head Shaper",
-    bio: "Glassing boards since the early nineties. Stuart takes the complex jobs — buckled guns, glassed fins, full nose rebuilds. He's the reason the workshop exists.",
+    bio: "Glassing boards since the early nineties. Stuart takes the complex jobs — buckled guns, glassed fins, full nose rebuilds.",
   },
   {
     slug: "reilly",
@@ -28,25 +28,31 @@ const members = [
 export default function Team() {
   return (
     <section id="team" className={styles.section}>
-      <div className={styles.header}>
-        <h2 className={styles.heading}>The Team</h2>
-      </div>
+      <h2 className={styles.heading} data-reveal>The Team</h2>
+
       <ul className={styles.grid} role="list">
-        {members.map((m) => (
-          <li key={m.slug} className={styles.member}>
+        {members.map((m, i) => (
+          <li
+            key={m.slug}
+            className={styles.card}
+            data-reveal
+            data-reveal-delay={String(i * 120)}
+          >
             <div className={styles.imageWrap}>
               <Image
                 src={m.src}
                 alt={`${m.name} — ${m.role} at Sydney Surfboard Repair`}
                 fill
                 className={styles.photo}
-                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                sizes="(max-width: 600px) 100vw, 33vw"
               />
+              <div className={styles.overlay}>
+                <p className={styles.bio}>{m.bio}</p>
+              </div>
             </div>
             <div className={styles.info}>
               <p className={styles.name}>{m.name}</p>
               <p className={styles.role}>{m.role}</p>
-              <p className={styles.bio}>{m.bio}</p>
             </div>
           </li>
         ))}

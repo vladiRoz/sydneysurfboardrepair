@@ -1,6 +1,6 @@
 .section {
   padding: clamp(40px, 6vw, 80px) clamp(24px, 4vw, 56px);
-  border-left: 2px solid var(--ink);
+  border-left: 1px solid var(--border);
   display: flex;
   align-items: stretch;
   min-width: clamp(200px, 28vw, 380px);
@@ -19,9 +19,15 @@
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink);
-  opacity: 0.6;
+  color: var(--muted);
   margin: 0 0 8px;
+}
+
+/* ── Clip-path reveal ────────────────────────────────────── */
+
+@keyframes clipIn {
+  from { clip-path: inset(0 100% 0 0); opacity: 0.4; }
+  to   { clip-path: inset(0 0% 0 0);   opacity: 1; }
 }
 
 .number {
@@ -30,8 +36,14 @@
   font-size: clamp(5rem, 12vw, 10rem);
   line-height: 0.85;
   letter-spacing: -0.04em;
-  color: var(--ink);
+  color: var(--aqua);
   margin: 0;
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+}
+
+.number.revealed {
+  animation: clipIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 
 .unit {
@@ -40,22 +52,28 @@
   font-size: clamp(1.125rem, 2.5vw, 2rem);
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--cream);
   margin: 0 0 var(--sp-md);
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+}
+
+.unit.revealed {
+  animation: clipIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 .caveat {
-  font-size: 0.875rem;
-  color: var(--ink);
-  opacity: 0.6;
-  max-width: 38ch;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  max-width: 28ch;
   margin: 0;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
   .section {
     border-left: none;
-    border-top: 2px solid var(--ink);
+    border-top: 1px solid var(--border);
     min-width: 0;
     padding: clamp(32px, 6vw, 56px) clamp(16px, 5vw, 64px);
   }

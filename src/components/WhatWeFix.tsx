@@ -35,34 +35,41 @@ const repairs = [
     src: "/images/legrope.jpg",
     alt: "Legrope plug replacement on a shortboard.",
     label: "Plugs & Fins",
-    desc: "Legrope plugs, FCS, Futures, and single-fin boxes.",
+    desc: "FCS, Futures, single-fin and legrope plugs.",
   },
 ];
 
 export default function WhatWeFix() {
   return (
     <section id="repairs" className={styles.section}>
-      <div className={styles.header}>
+      <div className={styles.header} data-reveal>
         <h2 className={styles.heading}>What We Fix</h2>
         <p className={styles.sub}>
           Poly or epoxy, shortboard to SUP — if it&apos;s glassed, we fix it.
         </p>
       </div>
+
       <ul className={styles.grid} role="list">
-        {repairs.map((r) => (
-          <li key={r.slug} className={styles.card}>
+        {repairs.map((r, i) => (
+          <li
+            key={r.slug}
+            className={styles.card}
+            data-reveal
+            data-reveal-delay={String(i * 80)}
+          >
             <div className={styles.imageWrap}>
               <Image
                 src={r.src}
                 alt={r.alt}
                 fill
                 className={styles.photo}
-                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 20vw"
+                sizes="(max-width: 600px) 80vw, (max-width: 900px) 40vw, 20vw"
               />
+              <div className={styles.overlay} />
             </div>
-            <div className={styles.caption}>
-              <span className={styles.label}>{r.label}</span>
-              <span className={styles.desc}>{r.desc}</span>
+            <div className={styles.body}>
+              <p className={styles.label}>{r.label}</p>
+              <p className={styles.desc}>{r.desc}</p>
             </div>
           </li>
         ))}

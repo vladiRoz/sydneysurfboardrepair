@@ -1,9 +1,6 @@
 .section {
   padding: var(--sp-section) clamp(16px, 5vw, 64px);
-}
-
-.header {
-  margin-bottom: clamp(40px, 6vw, 64px);
+  border-top: 1px solid var(--border);
 }
 
 .heading {
@@ -13,8 +10,8 @@
   line-height: 0.9;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: var(--ink);
-  margin: 0;
+  color: var(--cream);
+  margin: 0 0 clamp(40px, 6vw, 64px);
 }
 
 .grid {
@@ -23,30 +20,75 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 3vw, 48px);
+  gap: 2px;
 }
 
-.member {
+.card {
   display: flex;
   flex-direction: column;
 }
+
+/* ── Photo card ──────────────────────────────────────────── */
 
 .imageWrap {
   position: relative;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  margin-bottom: var(--sp-sm);
+  background: var(--surface);
 }
 
 .photo {
   object-fit: cover;
   object-position: top center;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.card:hover .photo {
+  transform: scale(1.05);
+}
+
+/* ── Bio overlay ─────────────────────────────────────────── */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(12, 26, 31, 0.92) 0%,
+    rgba(12, 26, 31, 0.4) 50%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: var(--sp-md);
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.bio {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--cream);
+  margin: 0;
+  transform: translateY(8px);
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .bio {
+  transform: translateY(0);
+}
+
+/* ── Name strip ──────────────────────────────────────────── */
+
 .info {
+  padding: var(--sp-sm) 0 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .name {
@@ -55,7 +97,7 @@
   font-size: 1.5rem;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--cream);
   margin: 0;
 }
 
@@ -63,23 +105,15 @@
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink);
-  opacity: 0.55;
-  margin: 0 0 6px;
-}
-
-.bio {
-  font-size: 0.875rem;
-  line-height: 1.55;
-  color: var(--ink);
+  color: var(--aqua);
   opacity: 0.8;
   margin: 0;
-  max-width: 34ch;
 }
 
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: clamp(24px, 4vw, 40px);
     max-width: 420px;
   }
 
@@ -87,7 +121,11 @@
     aspect-ratio: 4 / 3;
   }
 
+  .overlay {
+    opacity: 1;
+  }
+
   .bio {
-    max-width: 100%;
+    transform: none;
   }
 }

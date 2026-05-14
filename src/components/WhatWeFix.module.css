@@ -1,9 +1,10 @@
 .section {
   padding: var(--sp-section) clamp(16px, 5vw, 64px);
+  border-top: 1px solid var(--border);
 }
 
 .header {
-  margin-bottom: clamp(40px, 6vw, 72px);
+  margin-bottom: clamp(40px, 5vw, 64px);
 }
 
 .heading {
@@ -13,31 +14,53 @@
   line-height: 0.9;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--cream);
   margin: 0 0 var(--sp-sm);
 }
 
 .sub {
   font-size: clamp(0.9rem, 1.2vw, 1.0625rem);
-  color: var(--ink);
-  opacity: 0.75;
-  max-width: 42ch;
+  color: var(--muted);
+  max-width: 44ch;
   margin: 0;
 }
 
+/* ── Card grid ───────────────────────────────────────────── */
+
 .grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  cursor: default;
+  transition:
+    transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 350ms ease,
+    box-shadow 350ms ease;
+  will-change: transform;
 }
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--aqua);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px var(--aqua),
+    0 0 24px rgba(86, 182, 198, 0.15);
+}
+
+/* ── Image ───────────────────────────────────────────────── */
 
 .imageWrap {
   position: relative;
@@ -48,35 +71,61 @@
 .photo {
   object-fit: cover;
   object-position: center;
-  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover .photo {
-  transform: scale(1.04);
+  transform: scale(1.07);
 }
 
-.caption {
-  padding: var(--sp-sm) 0 0;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(12, 26, 31, 0.5) 100%
+  );
+  transition: opacity 350ms ease;
+}
+
+.card:hover .overlay {
+  opacity: 0.6;
+}
+
+/* ── Body ────────────────────────────────────────────────── */
+
+.body {
+  padding: 16px 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
+  flex: 1;
 }
 
 .label {
   font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
   font-weight: 900;
-  font-size: 1.125rem;
-  letter-spacing: 0.01em;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--cream);
+  margin: 0;
+  transition: color 250ms ease;
+}
+
+.card:hover .label {
+  color: var(--aqua);
 }
 
 .desc {
   font-size: 0.8125rem;
-  color: var(--ink);
-  opacity: 0.65;
-  line-height: 1.4;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
 }
+
+/* ── Responsive ──────────────────────────────────────────── */
 
 @media (max-width: 900px) {
   .grid {
@@ -87,5 +136,6 @@
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 }

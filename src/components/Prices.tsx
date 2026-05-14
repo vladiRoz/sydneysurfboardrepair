@@ -42,12 +42,12 @@ const groups = [
 export default function Prices() {
   return (
     <section id="prices" className={styles.section}>
-      <div className={styles.header}>
+      <div className={styles.header} data-reveal>
         <h2 className={styles.heading}>Prices</h2>
         <p className={styles.sub}>All prices in AUD, inc. materials.</p>
       </div>
 
-      <div className={styles.tableWrap}>
+      <div className={styles.tableWrap} data-reveal data-reveal-delay="150">
         <table className={styles.table}>
           <thead>
             <tr>
@@ -60,9 +60,7 @@ export default function Prices() {
             {groups.map((group) => (
               <Fragment key={group.name}>
                 <tr className={styles.groupRow}>
-                  <td colSpan={3} className={styles.groupName}>
-                    {group.name}
-                  </td>
+                  <td colSpan={3} className={styles.groupName}>{group.name}</td>
                 </tr>
                 {group.rows.map((row) => (
                   <tr key={row.service} className={styles.row}>
@@ -77,7 +75,7 @@ export default function Prices() {
         </table>
       </div>
 
-      <p className={styles.note}>
+      <p className={styles.note} data-reveal data-reveal-delay="250">
         Got something unusual? Call us and we&apos;ll give you a quote on the spot.
       </p>
     </section>
