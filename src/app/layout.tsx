@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Big_Shoulders_Display, Familjen_Grotesk } from "next/font/google";
+import { Big_Shoulders, Familjen_Grotesk } from "next/font/google";
 import ScrollReveal from "@/components/ScrollReveal";
 import "./globals.css";
 
-const bigShoulders = Big_Shoulders_Display({
+const bigShoulders = Big_Shoulders({
   weight: ["400", "500", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-display",
