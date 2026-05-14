@@ -1,0 +1,137 @@
+.section {
+  padding: var(--sp-section) clamp(16px, 5vw, 64px);
+}
+
+.header {
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+
+.heading {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 var(--sp-sm);
+}
+
+.sub {
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  color: var(--ink);
+  opacity: 0.75;
+  margin: 0;
+}
+
+.compare {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: col-resize;
+  border: 2px solid var(--ink);
+}
+
+.imageBase,
+.imageAfter {
+  position: absolute;
+  inset: 0;
+}
+
+.imageAfter {
+  will-change: clip-path;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.labelBefore,
+.labelAfter {
+  position: absolute;
+  bottom: var(--sp-sm);
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--aqua);
+  padding: 4px 10px;
+  pointer-events: none;
+}
+
+.labelBefore {
+  left: var(--sp-sm);
+}
+
+.labelAfter {
+  right: var(--sp-sm);
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: col-resize;
+  touch-action: none;
+  z-index: 10;
+}
+
+.handle:focus-visible .disc {
+  outline: 2px solid var(--aqua);
+  outline-offset: 3px;
+}
+
+.line {
+  width: 2px;
+  flex: 1;
+  background: var(--ink);
+}
+
+.disc {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--aqua);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .compare {
+    aspect-ratio: 3 / 4;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,70 @@
+.section {
+  padding: clamp(40px, 6vw, 80px) clamp(24px, 4vw, 56px);
+  border-left: 2px solid var(--ink);
+  display: flex;
+  align-items: stretch;
+  min-width: clamp(200px, 28vw, 380px);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.label {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.6;
+  margin: 0 0 8px;
+}
+
+.number {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(5rem, 12vw, 10rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.unit {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.125rem, 2.5vw, 2rem);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 var(--sp-md);
+}
+
+.caveat {
+  font-size: 0.875rem;
+  color: var(--ink);
+  opacity: 0.6;
+  max-width: 38ch;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    border-left: none;
+    border-top: 2px solid var(--ink);
+    min-width: 0;
+    padding: clamp(32px, 6vw, 56px) clamp(16px, 5vw, 64px);
+  }
+
+  .number {
+    font-size: clamp(5rem, 22vw, 9rem);
+  }
+
+  .unit {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+  }
+}

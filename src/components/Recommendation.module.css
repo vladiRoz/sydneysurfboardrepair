@@ -1,0 +1,77 @@
+.section {
+  padding: var(--sp-section) clamp(16px, 5vw, 64px);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.inner {
+  max-width: 760px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  color: var(--ink);
+  margin-bottom: var(--sp-md);
+}
+
+.quote {
+  margin: 0 0 var(--sp-md);
+  padding: 0;
+}
+
+.quote p {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-md);
+}
+
+.author {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-sm);
+}
+
+.name {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--ink);
+}
+
+.source {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.6;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  border: 2px solid var(--ink);
+  padding: 10px 20px;
+}
+
+.badgeScore {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.badgeLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.7;
+}

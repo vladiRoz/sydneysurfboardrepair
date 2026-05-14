@@ -1,0 +1,12 @@
+.compareRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  gap: 0;
+}
+
+@media (max-width: 768px) {
+  .compareRow {
+    grid-template-columns: 1fr;
+  }
+}

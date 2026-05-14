@@ -1,0 +1,78 @@
+:root {
+  --aqua: #56b6c6;
+  --aqua-press: #3a9bae;
+  --ink: #0d1922;
+
+  --sp-xs: 8px;
+  --sp-sm: 16px;
+  --sp-md: 32px;
+  --sp-lg: 64px;
+  --sp-xl: clamp(64px, 10vw, 120px);
+  --sp-section: clamp(80px, 12vw, 140px);
+
+  --nav-height: 60px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--aqua);
+  color: var(--ink);
+  font-family: var(--font-body), "Helvetica Neue", system-ui, sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.section-pad {
+  padding-top: var(--sp-section);
+  padding-bottom: var(--sp-section);
+}

@@ -1,0 +1,93 @@
+.section {
+  padding: var(--sp-section) clamp(16px, 5vw, 64px);
+}
+
+.header {
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.heading {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 3vw, 48px);
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin-bottom: var(--sp-sm);
+}
+
+.photo {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+}
+
+.role {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.55;
+  margin: 0 0 6px;
+}
+
+.bio {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.8;
+  margin: 0;
+  max-width: 34ch;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .imageWrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .bio {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,102 @@
+.section {
+  padding: var(--sp-section) clamp(16px, 5vw, 64px);
+}
+
+.header {
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.heading {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 var(--sp-sm);
+}
+
+.sub {
+  font-size: clamp(0.9rem, 1.2vw, 1.0625rem);
+  color: var(--ink);
+  opacity: 0.75;
+  margin: 0;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  max-width: 640px;
+  border-collapse: collapse;
+}
+
+.table thead tr {
+  border-bottom: 2px solid var(--ink);
+}
+
+.thService,
+.thPrice {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.6;
+  padding: 0 0 var(--sp-sm);
+  text-align: left;
+}
+
+.thPrice {
+  text-align: right;
+  width: 110px;
+}
+
+.groupRow td {
+  padding-top: var(--sp-md);
+  padding-bottom: 6px;
+}
+
+.groupName {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.5;
+}
+
+.row {
+  border-bottom: 1px solid oklch(from var(--ink) l c h / 0.12);
+}
+
+.tdService {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: var(--ink);
+  padding: 12px 0;
+}
+
+.tdPrice {
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 1.125rem;
+  color: var(--ink);
+  text-align: right;
+  padding: 12px 0 12px 24px;
+  white-space: nowrap;
+}
+
+.note {
+  margin-top: var(--sp-md);
+  font-size: 0.875rem;
+  color: var(--ink);
+  opacity: 0.65;
+  max-width: 44ch;
+}
