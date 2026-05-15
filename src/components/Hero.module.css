@@ -1,7 +1,7 @@
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100svh;
+  min-height: 72svh;
   padding-top: var(--nav-height);
 }
 
@@ -122,16 +122,43 @@
 
 @media (max-width: 768px) {
   .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    display: block;
+    position: relative;
+    min-height: 66svh;
+    overflow: hidden;
   }
 
   .left {
-    min-height: 65svh;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    width: 100%;
+    min-height: 66svh;
+    padding: clamp(56px, 9vw, 96px) clamp(20px, 5vw, 40px) clamp(40px, 6vw, 80px);
+  }
+
+  .word {
+    font-size: clamp(2.8rem, 13vw, 5.5rem);
+    text-shadow: 6px 0 20px rgba(0,0,0,0.65), 12px 0 40px rgba(0,0,0,0.4);
+  }
+
+  .sub {
+    max-width: 60%;
   }
 
   .right {
-    height: 60vw;
-    min-height: 260px;
+    position: absolute;
+    top: var(--nav-height);
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    height: auto;
+    z-index: 1;
+    background: transparent;
+  }
+
+  .photo {
+    object-fit: cover;
+    object-position: center;
   }
 }
