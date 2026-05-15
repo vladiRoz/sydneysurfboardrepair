@@ -55,9 +55,9 @@
   transform: translateY(-10px);
   border-color: var(--aqua);
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.4),
     0 0 0 1px var(--aqua),
-    0 0 24px rgba(86, 182, 198, 0.15);
+    0 18px 36px rgba(13, 25, 34, 0.10),
+    0 0 28px rgba(86, 182, 198, 0.22);
 }
 
 /* ── Image ───────────────────────────────────────────────── */

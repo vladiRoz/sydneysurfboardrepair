@@ -1,13 +1,14 @@
 :root {
-  --bg: #0c1a1f;
-  --surface: #111f26;
+  --bg: #f3ead8;
+  --surface: #ece1c8;
   --aqua: #56b6c6;
   --aqua-press: #3a9bae;
-  --aqua-dim: rgba(86, 182, 198, 0.08);
+  --aqua-dim: rgba(86, 182, 198, 0.14);
   --ink: #0d1922;
-  --cream: #e8e4dc;
-  --muted: rgba(232, 228, 220, 0.5);
-  --border: rgba(232, 228, 220, 0.1);
+  --cream: #0d1922;
+  --on-ink: #f3ead8;
+  --muted: rgba(13, 25, 34, 0.55);
+  --border: rgba(13, 25, 34, 0.14);
 
   --sp-xs: 8px;
   --sp-sm: 16px;

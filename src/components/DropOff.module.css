@@ -103,8 +103,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--aqua);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
   padding: 14px 32px;
   border-radius: 999px;
   font-family: var(--font-body), system-ui, sans-serif;
@@ -113,11 +113,12 @@
   letter-spacing: 0.04em;
   min-height: 48px;
   align-self: flex-start;
-  transition: background 200ms cubic-bezier(0.16, 1, 0.3, 1), gap 200ms ease;
+  transition: background 200ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms ease, gap 200ms ease;
 }
 
 .cta:hover {
-  background: #6ec9d8;
+  background: var(--aqua);
+  color: var(--ink);
   gap: 16px;
 }
 
@@ -148,7 +149,7 @@
   height: 100%;
   border: none;
   display: block;
-  filter: grayscale(1) brightness(0.5) contrast(1.2);
+  filter: grayscale(1) contrast(1.05);
 }
 
 @media (max-width: 768px) {
