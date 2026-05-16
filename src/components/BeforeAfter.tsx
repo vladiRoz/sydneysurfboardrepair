@@ -58,7 +58,7 @@ export default function BeforeAfter() {
 
   return (
     <section id="before-after" className={styles.section}>
-      <div className={styles.header}>
+      <div className={styles.header} data-reveal>
         <h2 className={styles.heading}>Before &amp; After</h2>
         <p className={styles.sub}>Drag to compare.</p>
       </div>
@@ -68,6 +68,8 @@ export default function BeforeAfter() {
         className={styles.compare}
         onClick={onContainerClick}
         aria-hidden="true"
+        data-reveal
+        data-reveal-delay="150"
       >
         <div className={styles.imageBase}>
           <Image

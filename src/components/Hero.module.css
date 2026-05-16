@@ -62,7 +62,7 @@
 
 .sub {
   font-size: clamp(0.875rem, 1.1vw, 1rem);
-  color: var(--muted);
+  color: #fff;
   opacity: 0;
   animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -113,8 +113,17 @@
   background: var(--surface);
 }
 
+.right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .photo {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -139,7 +148,6 @@
 
   .word {
     font-size: clamp(2.8rem, 13vw, 5.5rem);
-    text-shadow: 6px 0 20px rgba(0,0,0,0.65), 12px 0 40px rgba(0,0,0,0.4);
   }
 
   .sub {
@@ -148,11 +156,12 @@
 
   .right {
     position: absolute;
-    top: var(--nav-height);
+    top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
-    width: 60%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     z-index: 1;
     background: transparent;
   }

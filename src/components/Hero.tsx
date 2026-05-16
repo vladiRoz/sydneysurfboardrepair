@@ -27,8 +27,8 @@ export default function Hero() {
 
       <div className={styles.right}>
         <Image
-          src="/images/work.webp"
-          alt="The Sydney Surfboard Repair workshop: paint-covered buckets, resin-stained tools, brushes worn from years of work."
+          src="/images/hero.jpg"
+          alt="Sydney Surfboard Repair hero image."
           fill
           className={styles.photo}
           priority
